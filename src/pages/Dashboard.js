@@ -41,7 +41,7 @@ const Dashboard = () => {
       try {
         const token = localStorage.getItem("token");
         await axios.delete(
-          `http://localhost:5000/api/v1/users/${userId}/soft-delete`,
+          `https://user-management-backent.vercel.app/v1/users/${userId}/soft-delete`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         fetchUsers();
