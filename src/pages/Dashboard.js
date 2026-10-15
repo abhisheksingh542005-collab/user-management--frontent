@@ -9,7 +9,7 @@ const Dashboard = () => {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.get("http://localhost:5000/api/v1/users", {
+      const res = await axios.get("https://user-management-backent.vercel.app/api/v1/users", {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsers(res.data);
@@ -26,7 +26,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.patch(
-        `http://localhost:5000/api/v1/users/${userId}/status`,
+        `https://user-management-backent.vercel.app/api/v1/users/${userId}/status`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
