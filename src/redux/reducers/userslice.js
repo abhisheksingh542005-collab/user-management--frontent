@@ -5,7 +5,7 @@ import axios from 'axios';
 export const getAllUsers = createAsyncThunk('users/getAllUsers', async (_, thunkAPI) => {
   try {
     const token = localStorage.getItem('token');
-    const res = await axios.get('http://localhost:5000/api/v1/users', {
+    const res = await axios.get('https://user-management-backent.vercel.app/api/v1/users', {
       headers: { Authorization: `Bearer ${token}` }
     });
     return res.data;
