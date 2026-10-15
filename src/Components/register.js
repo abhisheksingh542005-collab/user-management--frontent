@@ -23,7 +23,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/v1/register', input);
+      await axios.post('https://user-management-backent.vercel.app/api/v1/register', input);
 
       alert('Registration Successful!');
       navigate('/login');
