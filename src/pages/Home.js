@@ -21,7 +21,7 @@ export default function Home() {
   // Toggle Status PATCH API
   const handleToggleStatus = async (id) => {
     try {
-      await axios.patch(`http://localhost:5000/api/v1/users/${id}/status`, {}, {
+      await axios.patch(`https://user-management-backent.vercel.app/api/v1/users/${id}/status`, {}, {
         headers: { Authorization: `Bearer ${token}` }
       });
       dispatch(getAllUsers());
@@ -33,7 +33,7 @@ export default function Home() {
   // Soft Delete DELETE API
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/v1/users/${id}/soft-delete`, {
+      await axios.delete(`https://user-management-backent.vercel.app/api/v1/users/${id}/soft-delete`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       dispatch(getAllUsers());
